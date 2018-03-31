@@ -12,6 +12,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.tintColor = .purple
+        
         let favoritesViewController = ViewController()
         favoritesViewController.tabBarItem.title = "Favourites"
         favoritesViewController.tabBarItem.image = #imageLiteral(resourceName: "favorites")
@@ -20,6 +22,10 @@ class MainTabBarController: UITabBarController {
         searchNavigationController.tabBarItem.title = "Search"
         searchNavigationController.tabBarItem.image = #imageLiteral(resourceName: "search")
         
-        viewControllers = [favoritesViewController, searchNavigationController]
+        let downloadsNavigationController = UINavigationController(rootViewController: ViewController())
+        downloadsNavigationController.tabBarItem.title = "Downloads"
+        downloadsNavigationController.tabBarItem.image = #imageLiteral(resourceName: "downloads")
+        
+        viewControllers = [favoritesViewController, searchNavigationController, downloadsNavigationController]
     }
 }
