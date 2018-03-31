@@ -13,6 +13,7 @@
 		CCE258E2206FB3610025DB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE258E1206FB3610025DB21 /* Assets.xcassets */; };
 		CCE258E5206FB3610025DB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE258E3206FB3610025DB21 /* LaunchScreen.storyboard */; };
 		CCE258ED206FB3A70025DB21 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258EC206FB3A70025DB21 /* MainTabBarController.swift */; };
+		CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258EF206FBE200025DB21 /* PodcastsSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CCE258E4206FB3610025DB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCE258E6206FB3610025DB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCE258EC206FB3A70025DB21 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CCE258EF206FBE200025DB21 /* PodcastsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		CCE258D9206FB3610025DB21 /* PodcastPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				CCE258EE206FBE100025DB21 /* ViewControllers */,
 				CCE258DA206FB3610025DB21 /* AppDelegate.swift */,
 				CCE258DC206FB3610025DB21 /* ViewController.swift */,
 				CCE258DE206FB3610025DB21 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				CCE258EC206FB3A70025DB21 /* MainTabBarController.swift */,
 			);
 			path = PodcastPlayer;
+			sourceTree = "<group>";
+		};
+		CCE258EE206FBE100025DB21 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCE258EF206FBE200025DB21 /* PodcastsSearchViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE258DD206FB3610025DB21 /* ViewController.swift in Sources */,
+				CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */,
 				CCE258DB206FB3610025DB21 /* AppDelegate.swift in Sources */,
 				CCE258ED206FB3A70025DB21 /* MainTabBarController.swift in Sources */,
 			);

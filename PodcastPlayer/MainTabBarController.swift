@@ -21,11 +21,11 @@ class MainTabBarController: UITabBarController {
     // MARK: - Setup Functions
     
     fileprivate func setupViewControllers() {
+        let searchNavigationController = generateNavigationController(with: PodcastsSearchViewController(), title: "Search", image: #imageLiteral(resourceName: "search"))
         let favoritesNavigationController = generateNavigationController(with: ViewController(), title: "Favorites", image: #imageLiteral(resourceName: "favorites"))
-        let searchNavigationController = generateNavigationController(with: ViewController(), title: "Search", image: #imageLiteral(resourceName: "search"))
         let downloadsNavigationController = generateNavigationController(with: ViewController(), title: "Downloads", image: #imageLiteral(resourceName: "downloads"))
         
-        viewControllers = [favoritesNavigationController, searchNavigationController, downloadsNavigationController]
+        viewControllers = [searchNavigationController, favoritesNavigationController, downloadsNavigationController]
     }
     
     // MARK: - Helper functions
