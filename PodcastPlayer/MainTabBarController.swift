@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainTabBarController.swift
 //  PodcastPlayer
 //
 //  Created by magnus holm on 31/03/2018.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .green 
     }
-
 }
-
