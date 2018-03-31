@@ -14,18 +14,22 @@ class MainTabBarController: UITabBarController {
         
         tabBar.tintColor = .purple
         
-        let favoritesNavigationController = UINavigationController(rootViewController: ViewController())
-        favoritesNavigationController.tabBarItem.title = "Favourites"
-        favoritesNavigationController.tabBarItem.image = #imageLiteral(resourceName: "favorites")
-        
-        let searchNavigationController = UINavigationController(rootViewController: ViewController())
-        searchNavigationController.tabBarItem.title = "Search"
-        searchNavigationController.tabBarItem.image = #imageLiteral(resourceName: "search")
-        
-        let downloadsNavigationController = UINavigationController(rootViewController: ViewController())
-        downloadsNavigationController.tabBarItem.title = "Downloads"
-        downloadsNavigationController.tabBarItem.image = #imageLiteral(resourceName: "downloads")
+        let favoritesNavigationController = generateNavigationController(with: ViewController(), title: "Favorites", image: #imageLiteral(resourceName: "favorites"))
+        let searchNavigationController = generateNavigationController(with: ViewController(), title: "Search", image: #imageLiteral(resourceName: "search"))
+        let downloadsNavigationController = generateNavigationController(with: ViewController(), title: "Downloads", image: #imageLiteral(resourceName: "downloads"))
         
         viewControllers = [favoritesNavigationController, searchNavigationController, downloadsNavigationController]
     }
+    
+    fileprivate func generateNavigationController(with rootViewController: UIViewController, title: String, image: UIImage) -> UINavigationController {
+        
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.tabBarItem.title = title
+        navigationController.tabBarItem.image = image
+        
+        return navigationController
+        
+    }
+    
+    
 }
