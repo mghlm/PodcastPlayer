@@ -12,6 +12,14 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .green 
+        let favoritesViewController = ViewController()
+        favoritesViewController.tabBarItem.title = "Favourites"
+        favoritesViewController.tabBarItem.image = #imageLiteral(resourceName: "favorites")
+        
+        let searchNavigationController = UINavigationController(rootViewController: ViewController())
+        searchNavigationController.tabBarItem.title = "Search"
+        searchNavigationController.tabBarItem.image = #imageLiteral(resourceName: "search")
+        
+        viewControllers = [favoritesViewController, searchNavigationController]
     }
 }
