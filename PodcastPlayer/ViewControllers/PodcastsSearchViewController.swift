@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     
@@ -43,7 +44,34 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     // MARK: UISearchController
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        
+        let url = "https://itunes.apple.com/search?term=\(searchText)"
+        Alamofire.request(url).response { (dataResponse) in
+            if let error = dataResponse.error {
+                print("failed to load", error)
+                return
+            }
+            
+            guard let data = dataResponse.data else {
+                return
+            }
+            let dummyString = String(data: data, encoding: .utf8)
+            print(dummyString ?? "")
+            
+            do {
+                let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
+                print("Result count:", searchResult.resultCount)
+                
+            } catch let decodeError {
+                print("Failed to decode:", decodeError)
+            }
+        }
+    }
+    
+    struct SearchResults: Decodable {
+        
+        let resultCount: Int
+        let results: [Podcast]
     }
     
     // MARK: - UITableView
