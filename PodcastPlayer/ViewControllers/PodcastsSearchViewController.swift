@@ -83,7 +83,7 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
         
         let podcast = self.podcasts[indexPath.row]
         
-        cell.textLabel?.text = "\(podcast.trackName)\n\(podcast.artistName)"
+        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
         cell.textLabel?.numberOfLines = 0
         cell.imageView?.image = #imageLiteral(resourceName: "appicon")
         return cell
