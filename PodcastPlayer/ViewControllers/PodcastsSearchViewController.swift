@@ -41,8 +41,13 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        let url = "https://itunes.apple.com/search?term=\(searchText)"
-        Alamofire.request(url).response { (dataResponse) in
+        let url = "https://itunes.apple.com/search"
+        let parameters = ["term": searchText,
+                          "media": "podcast"]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+            .response { (dataResponse) in
+                
             if let error = dataResponse.error {
                 print("failed to load", error)
                 return
