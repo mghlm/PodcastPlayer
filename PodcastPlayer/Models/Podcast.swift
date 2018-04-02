@@ -9,7 +9,7 @@
 import Foundation
 
 struct Podcast: Decodable {
-    let name: String
+    let trackName: String
     let artistName: String
 }
 
