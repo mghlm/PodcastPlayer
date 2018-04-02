@@ -54,9 +54,6 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
             
             do {
                 let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
-                searchResult.results.forEach({ (podcast) in
-                    print(podcast.artistName, podcast.trackName)
-                })
                 
                 self.podcasts = searchResult.results
                 self.tableView.reloadData()
