@@ -16,7 +16,6 @@ class APIService {
     static let shared = APIService()
     
     func fetchPodcast(searchText: String, completion: @escaping ([Podcast]) -> () ) {
-        print("Searching for podcast...")
         
         let parameters = ["term": searchText,
                           "media": "podcast"]
