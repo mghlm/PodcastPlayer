@@ -47,7 +47,6 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
         APIService.shared.fetchPodcast(searchText: searchText) { (podcasts) in
             self.podcasts = podcasts
             self.tableView.reloadData()
-
         }
         
     }
@@ -59,9 +58,10 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PodcastCell
         
-//        let podcast = self.podcasts[indexPath.row]
+        let podcast = self.podcasts[indexPath.row]
+        cell.podcast = podcast
 //
 //        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
 //        cell.textLabel?.numberOfLines = 0
