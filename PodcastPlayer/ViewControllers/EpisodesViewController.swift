@@ -10,7 +10,7 @@ import UIKit
 
 class EpisodesViewController: UITableViewController {
     
-//    var episodes = [Episode]()
+    var episodes = [Episode(title: "An episode"), Episode(title: "Another episide")]
     
     var podcast: Podcast? {
         didSet {
@@ -23,6 +23,15 @@ class EpisodesViewController: UITableViewController {
         
     }
     
+    // MARK: - UITableView
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        return cell
+    }
     
 }
