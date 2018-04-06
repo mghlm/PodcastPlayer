@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage 
 
 class PodcastCell: UITableViewCell {
     
@@ -23,8 +24,6 @@ class PodcastCell: UITableViewCell {
             artistNameLabel.text = podcast.artistName
             episodeCountLabel.text = "\(podcast.trackCount ?? 0) Episodes"
             
-            print("Loading podcast image with url: \(podcast.artworkUrl600 ?? "")")
-            
             guard let url = URL(string: podcast.artworkUrl600 ?? "") else { return }
             
             URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -35,7 +34,6 @@ class PodcastCell: UITableViewCell {
                 }
                 
             }.resume()
-            
         }
     }
     
