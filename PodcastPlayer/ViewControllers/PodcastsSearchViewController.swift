@@ -56,7 +56,8 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
         let label = UILabel()
         label.text = "Please enter a Search Term"
         label.textAlignment = .center
-        label.textColor = .purple 
+        label.textColor = .purple
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         return label
     }
     
