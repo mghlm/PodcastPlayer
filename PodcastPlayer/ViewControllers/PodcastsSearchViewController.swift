@@ -34,8 +34,6 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     fileprivate func setupTableView() {
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
         let nib = UINib(nibName: "PodcastCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
