@@ -8,13 +8,21 @@
 
 import UIKit
 
-class EpisodesViewController: UIViewController {
+class EpisodesViewController: UITableViewController {
+    
+//    var episodes = [Episode]()
+    
+    var podcast: Podcast? {
+        didSet {
+            navigationItem.title = podcast?.trackName ?? "Episodes"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Episodes"
-        
     }
+    
+    
     
 }

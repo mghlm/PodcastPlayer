@@ -27,6 +27,7 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Setup
     
     fileprivate func setupSearchBar() {
+        self.definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
@@ -54,6 +55,7 @@ class PodcastsSearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episodesViewController = EpisodesViewController()
+        episodesViewController.podcast = podcasts[indexPath.row]
         navigationController?.pushViewController(episodesViewController, animated: true)
     }
     
