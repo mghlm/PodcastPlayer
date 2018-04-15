@@ -30,23 +30,16 @@ class EpisodesViewController: UITableViewController {
         let feedParser = FeedParser(URL: url)
         feedParser?.parseAsync(result: { (result) in
             
-            switch result {
-            case let .rss(feed):
-                
-//                let imageUrl = feed.iTunes?.iTunesImage?.attributes?.href
-                
-                self.episodes = feed.toEpisodes()
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                break
-            case let .failure(error):
-                print("Failed to parse feed", error)
-                break
-            default:
-                print("Found a feed...")
+            if let err = result.error {
+                print("Failed to parse XML feed", err)
+                return
             }
             
+            guard let feed = result.rssFeed else { return }
+            self.episodes = feed.toEpisodes()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         })
     }
     
