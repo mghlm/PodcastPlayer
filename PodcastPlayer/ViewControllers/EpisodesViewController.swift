@@ -33,9 +33,8 @@ class EpisodesViewController: UITableViewController {
             switch result {
             case let .rss(feed):
                 feed.items?.forEach({ (feedItem) in
-                    if let title = feedItem.title {
-                        self.episodes.append(Episode(title: title))
-                    }
+                    let episode = Episode(feedItem: feedItem)
+                    self.episodes.append(episode)
                 })
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
