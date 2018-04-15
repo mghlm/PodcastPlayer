@@ -65,7 +65,7 @@ class EpisodesViewController: UITableViewController {
     fileprivate func setupTableView() {
         
         let nib = UINib(nibName: "EpisodeCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "episodeCellId")
+        tableView.register(nib, forCellReuseIdentifier: cellId)
         
     }
     
@@ -76,17 +76,9 @@ class EpisodesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCellId", for: indexPath) as! EpisodeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EpisodeCell
         let episode = episodes[indexPath.row]
-        
-        cell.pubDateLabel.numberOfLines = 2
-        cell.pubDateLabel.text = episode.pubDate.description
-        
-        cell.titleLabel.numberOfLines = 2
-        cell.titleLabel.text = episode.title
-        
-        cell.descriptionLabel.numberOfLines = 2
-        cell.descriptionLabel.text = episode.description
+        cell.episode = episode
         
         return cell
     }

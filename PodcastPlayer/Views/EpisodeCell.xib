@@ -58,7 +58,6 @@
                     <constraint firstAttribute="trailing" secondItem="UJf-xb-LqX" secondAttribute="trailing" constant="16" id="vRh-uL-7af"/>
                 </constraints>
             </tableViewCellContentView>
-            <accessibility key="accessibilityConfiguration" identifier="episodeCellId"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="2y3-8M-ybo" id="AU1-xA-Pm4"/>
