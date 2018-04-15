@@ -23,6 +23,7 @@
 		CCE258F3206FBEEB0025DB21 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258F2206FBEEB0025DB21 /* Podcast.swift */; };
 		CCFAAB3420839F5600D607C0 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */; };
 		CCFAAB3520839F5600D607C0 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */; };
+		CCFAAB382083E44E00D607C0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB372083E44E00D607C0 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CCE258F2206FBEEB0025DB21 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		CCFAAB372083E44E00D607C0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		CCE258D9206FB3610025DB21 /* PodcastPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				CCFAAB362083E43D00D607C0 /* Extensions */,
 				CCCD7D4F2073B05F0007F2D0 /* API */,
 				CCE258F1206FBEC90025DB21 /* Models */,
 				CCCD7D522073BB1D0007F2D0 /* Views */,
@@ -148,6 +151,14 @@
 				CCD185CC2077C2A500513AD4 /* Episode.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CCFAAB362083E43D00D607C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCFAAB372083E44E00D607C0 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE258DD206FB3610025DB21 /* ViewController.swift in Sources */,
+				CCFAAB382083E44E00D607C0 /* String.swift in Sources */,
 				CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */,
 				CCFAAB3420839F5600D607C0 /* EpisodeCell.swift in Sources */,
 				CCD185CB2077B95B00513AD4 /* EpisodesViewController.swift in Sources */,
