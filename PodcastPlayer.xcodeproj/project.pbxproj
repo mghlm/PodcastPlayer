@@ -21,6 +21,8 @@
 		CCE258ED206FB3A70025DB21 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258EC206FB3A70025DB21 /* MainTabBarController.swift */; };
 		CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258EF206FBE200025DB21 /* PodcastsSearchViewController.swift */; };
 		CCE258F3206FBEEB0025DB21 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE258F2206FBEEB0025DB21 /* Podcast.swift */; };
+		CCFAAB3420839F5600D607C0 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */; };
+		CCFAAB3520839F5600D607C0 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		CCE258EC206FB3A70025DB21 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CCE258EF206FBE200025DB21 /* PodcastsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchViewController.swift; sourceTree = "<group>"; };
 		CCE258F2206FBEEB0025DB21 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				CCCD7D532073BB670007F2D0 /* PodcastCell.xib */,
 				CCCD7D552073C4550007F2D0 /* PodcastCell.swift */,
+				CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */,
+				CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 				CCE258E5206FB3610025DB21 /* LaunchScreen.storyboard in Resources */,
 				CCE258E2206FB3610025DB21 /* Assets.xcassets in Resources */,
 				CCCD7D542073BB670007F2D0 /* PodcastCell.xib in Resources */,
+				CCFAAB3520839F5600D607C0 /* EpisodeCell.xib in Resources */,
 				CCE258E0206FB3610025DB21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +287,7 @@
 			files = (
 				CCE258DD206FB3610025DB21 /* ViewController.swift in Sources */,
 				CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */,
+				CCFAAB3420839F5600D607C0 /* EpisodeCell.swift in Sources */,
 				CCD185CB2077B95B00513AD4 /* EpisodesViewController.swift in Sources */,
 				CCE258DB206FB3610025DB21 /* AppDelegate.swift in Sources */,
 				CCE258ED206FB3A70025DB21 /* MainTabBarController.swift in Sources */,
