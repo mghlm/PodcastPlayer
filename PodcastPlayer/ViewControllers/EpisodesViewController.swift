@@ -19,31 +19,18 @@ class EpisodesViewController: UITableViewController {
         }
     }
     
+    var episodes = [Episode]()
+    
     fileprivate func fetchEpisodes() {
         
         guard let feedUrl = podcast?.feedUrl else { return }
-        
-        let secureFeedUrl = feedUrl.contains("https") ? feedUrl : feedUrl.replacingOccurrences(of: "http", with: "https")
-        
-        guard let url = URL(string: secureFeedUrl) else { return }
-        
-        let feedParser = FeedParser(URL: url)
-        feedParser?.parseAsync(result: { (result) in
-            
-            if let err = result.error {
-                print("Failed to parse XML feed", err)
-                return
-            }
-            
-            guard let feed = result.rssFeed else { return }
-            self.episodes = feed.toEpisodes()
+        APIService.shared.fetchEpisodes(feedUrl: feedUrl) { (episodes) in
+            self.episodes = episodes
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        })
+        }
     }
-    
-    var episodes = [Episode]()
     
     fileprivate let cellId = "cellId"
     
