@@ -32,8 +32,16 @@ class EpisodesViewController: UITableViewController {
             
             switch result {
             case let .rss(feed):
+                
+                let imageUrl = feed.iTunes?.iTunesImage?.attributes?.href
+                
                 feed.items?.forEach({ (feedItem) in
-                    let episode = Episode(feedItem: feedItem)
+                    var episode = Episode(feedItem: feedItem)
+                    
+                    if episode.imageUrl == nil {
+                        episode.imageUrl = imageUrl
+                    }
+                    
                     self.episodes.append(episode)
                 })
                 DispatchQueue.main.async {

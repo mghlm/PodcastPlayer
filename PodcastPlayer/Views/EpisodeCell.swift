@@ -19,7 +19,7 @@ class EpisodeCell: UITableViewCell {
             titleLabel.text = episode.title
             descriptionLabel.text = episode.description
             
-            let url = URL(string: episode.imageUrl)
+            let url = URL(string: episode.imageUrl ?? "")
             episodeImageView.sd_setImage(with: url)
         }
     }
