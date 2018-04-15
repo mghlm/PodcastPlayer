@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EpisodeCell: UITableViewCell {
     
@@ -17,10 +18,18 @@ class EpisodeCell: UITableViewCell {
             pubDateLabel.text = dateFormatter.string(from: episode.pubDate)
             titleLabel.text = episode.title
             descriptionLabel.text = episode.description
+            
+            let url = URL(string: episode.imageUrl)
+            episodeImageView.sd_setImage(with: url)
         }
     }
-
-    @IBOutlet weak var episodeImageView: UIImageView!
+    
+    @IBOutlet weak var episodeImageView: UIImageView! {
+        didSet {
+            episodeImageView.layer.cornerRadius = 8
+            episodeImageView.clipsToBounds = true 
+        }
+    }
     @IBOutlet weak var pubDateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -33,3 +42,4 @@ class EpisodeCell: UITableViewCell {
         }
     }
 }
+
