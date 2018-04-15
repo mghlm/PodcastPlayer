@@ -33,17 +33,9 @@ class EpisodesViewController: UITableViewController {
             switch result {
             case let .rss(feed):
                 
-                let imageUrl = feed.iTunes?.iTunesImage?.attributes?.href
+//                let imageUrl = feed.iTunes?.iTunesImage?.attributes?.href
                 
-                feed.items?.forEach({ (feedItem) in
-                    var episode = Episode(feedItem: feedItem)
-                    
-                    if episode.imageUrl == nil {
-                        episode.imageUrl = imageUrl
-                    }
-                    
-                    self.episodes.append(episode)
-                })
+                self.episodes = feed.toEpisodes()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

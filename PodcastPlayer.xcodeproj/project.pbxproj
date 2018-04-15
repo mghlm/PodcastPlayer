@@ -24,6 +24,7 @@
 		CCFAAB3420839F5600D607C0 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */; };
 		CCFAAB3520839F5600D607C0 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */; };
 		CCFAAB382083E44E00D607C0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB372083E44E00D607C0 /* String.swift */; };
+		CCFAAB3A2083E55500D607C0 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFAAB392083E55500D607C0 /* RSSFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CCFAAB3220839F5600D607C0 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		CCFAAB3320839F5600D607C0 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		CCFAAB372083E44E00D607C0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		CCFAAB392083E55500D607C0 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CCFAAB372083E44E00D607C0 /* String.swift */,
+				CCFAAB392083E55500D607C0 /* RSSFeed.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFAAB3A2083E55500D607C0 /* RSSFeed.swift in Sources */,
 				CCE258DD206FB3610025DB21 /* ViewController.swift in Sources */,
 				CCFAAB382083E44E00D607C0 /* String.swift in Sources */,
 				CCE258F0206FBE200025DB21 /* PodcastsSearchViewController.swift in Sources */,
