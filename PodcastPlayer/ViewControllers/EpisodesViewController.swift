@@ -51,6 +51,16 @@ class EpisodesViewController: UITableViewController {
     
     // MARK: - UITableView
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = self.episodes[indexPath.row]
+        
+        let window = UIApplication.shared.keyWindow
+        let reView = UIView(frame: self.view.frame)
+        reView.backgroundColor = .red
+        window?.addSubview(reView)
+        
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
