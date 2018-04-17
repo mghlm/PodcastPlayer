@@ -52,12 +52,11 @@ class EpisodesViewController: UITableViewController {
     // MARK: - UITableView
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let episode = self.episodes[indexPath.row]
         
         let window = UIApplication.shared.keyWindow
-        let reView = UIView(frame: self.view.frame)
-        reView.backgroundColor = .red
-        window?.addSubview(reView)
+        let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self, options: nil)?.first as! UIView
+        playerDetailsView.frame = self.view.frame
+        window?.addSubview(playerDetailsView)
         
     }
     

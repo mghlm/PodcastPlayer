@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="IyS-rG-Mft">
+        <view contentMode="scaleToFill" id="IyS-rG-Mft" customClass="PlayerDetailsView" customModule="PodcastPlayer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -26,6 +26,9 @@
                                 <constraint firstAttribute="height" constant="44" id="XPv-4h-97V"/>
                             </constraints>
                             <state key="normal" title="Dismiss"/>
+                            <connections>
+                                <action selector="dismissButton:" destination="IyS-rG-Mft" eventType="touchUpInside" id="XOg-Dv-697"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="vrJ-Dd-ztU">
                             <rect key="frame" x="0.0" y="44" width="327" height="327"/>
@@ -56,6 +59,10 @@
                 <constraint firstItem="fkV-xd-Hhv" firstAttribute="top" secondItem="T0B-yF-YRx" secondAttribute="top" id="hr9-9C-7K1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="T0B-yF-YRx"/>
+            <connections>
+                <outlet property="episodeImageView" destination="vrJ-Dd-ztU" id="g65-mC-HIZ"/>
+                <outlet property="episodeTitleLabel" destination="kRf-lX-lzD" id="CzQ-7g-1Cd"/>
+            </connections>
             <point key="canvasLocation" x="-1394" y="-676"/>
         </view>
     </objects>
