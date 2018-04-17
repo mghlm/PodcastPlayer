@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PlayerDetailsView: UIView {
+    
+    var episode: Episode! {
+        didSet {
+            episodeTitleLabel.text = episode.title
+            guard let url = URL(string: episode.imageUrl) else { return }
+            episodeImageView.sd_setImage(with: URL(string: episode.imageUrl ?? ""))
+        }
+    }
     
     @IBAction func dismissButton(_ sender: Any) {
         self.removeFromSuperview()
