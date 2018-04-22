@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 import SDWebImage
 
 class PlayerDetailsView: UIView {
@@ -16,10 +17,26 @@ class PlayerDetailsView: UIView {
             episodeTitleLabel.text = episode.title
             episodeAuthorLabel.text = episode.author
             
+            playEpisode()
+            
             guard let url = URL(string: episode.imageUrl ?? "") else { return }
             episodeImageView.sd_setImage(with: url)
         }
     }
+    
+    fileprivate func playEpisode() {
+        print("Trying to play episode at url:", episode.streamUrl)
+        
+        guard let url = URL(string: episode.streamUrl) else { return }
+        let playerItem = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: playerItem)
+        player.play()
+    }
+    
+    let player: AVPlayer = {
+        let avPlayer = AVPlayer()
+        return avPlayer
+    }()
     
     @IBAction func dismissButton(_ sender: Any) {
         self.removeFromSuperview()
