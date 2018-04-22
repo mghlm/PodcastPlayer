@@ -65,10 +65,10 @@
                                 <constraint firstAttribute="height" constant="22" id="qGg-uK-1CU"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRf-lX-lzD">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode titel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRf-lX-lzD">
                             <rect key="frame" x="0.0" y="449" width="327" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="c9x-k8-fK2"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="c9x-k8-fK2"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <nil key="textColor"/>

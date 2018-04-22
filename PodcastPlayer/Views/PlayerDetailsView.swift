@@ -24,6 +24,6 @@ class PlayerDetailsView: UIView {
     }
     
     @IBOutlet weak var episodeImageView: UIImageView!
-    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeTitleLabel: UILabel! 
     
 }
