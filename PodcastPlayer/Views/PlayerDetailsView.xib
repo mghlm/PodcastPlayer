@@ -90,33 +90,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="49" height="85"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-8H-9ze">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-8H-9ze">
                                     <rect key="frame" x="49" y="0.0" width="44" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="peI-p9-LOF"/>
                                     </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <state key="normal" title="Button" image="rewind15"/>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDu-nx-WBp">
                                     <rect key="frame" x="93" y="0.0" width="48.5" height="85"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-1b-Jcm">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-1b-Jcm">
                                     <rect key="frame" x="141.5" y="0.0" width="54" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="54" id="nCb-ss-fl3"/>
                                     </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <state key="normal" title="Button" image="play"/>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-qp-8zW">
                                     <rect key="frame" x="195.5" y="0.0" width="39" height="85"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OB7-39-SqM">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OB7-39-SqM">
                                     <rect key="frame" x="234.5" y="0.0" width="44" height="85"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="Iai-ft-xTj"/>
                                     </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <state key="normal" title="Button" image="fastforward15"/>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTg-vb-Lmm">
@@ -162,8 +165,8 @@
             <connections>
                 <outlet property="episodeAuthorLabel" destination="7dz-ha-pAF" id="Vx0-Mh-GwL"/>
                 <outlet property="episodeImageView" destination="vrJ-Dd-ztU" id="g65-mC-HIZ"/>
-                <outlet property="episodePlayPauseButton" destination="YP9-1b-Jcm" id="miy-9g-3GZ"/>
                 <outlet property="episodeTitleLabel" destination="kRf-lX-lzD" id="CzQ-7g-1Cd"/>
+                <outlet property="playPauseButton" destination="YP9-1b-Jcm" id="dN5-WW-YtP"/>
             </connections>
             <point key="canvasLocation" x="-1475.5" y="-527.5"/>
         </view>

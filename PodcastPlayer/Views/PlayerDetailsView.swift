@@ -35,16 +35,40 @@ class PlayerDetailsView: UIView {
     
     let player: AVPlayer = {
         let avPlayer = AVPlayer()
+        avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
     }()
+    
+    // MARK: - Actions
     
     @IBAction func dismissButton(_ sender: Any) {
         self.removeFromSuperview()
     }
+    @IBOutlet weak var playPauseButton: UIButton! {
+        didSet {
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            playPauseButton.addTarget(self, action: #selector(handlePlayPause), for: .touchUpInside)
+        }
+    }
+    
+    
+    @objc fileprivate func handlePlayPause() {
+        
+        if player.timeControlStatus == .paused {
+            player.play()
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        } else {
+            player.pause()
+            playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        }
+        
+        print("handling play/pause")
+    }
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var episodeImageView: UIImageView!
     @IBOutlet weak var episodeTitleLabel: UILabel! 
     @IBOutlet weak var episodeAuthorLabel: UILabel!
-    @IBOutlet weak var episodePlayPauseButton: UIButton!
     
 }
