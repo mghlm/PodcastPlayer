@@ -160,7 +160,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="T0B-yF-YRx"/>
             <connections>
+                <outlet property="episodeAuthorLabel" destination="7dz-ha-pAF" id="Vx0-Mh-GwL"/>
                 <outlet property="episodeImageView" destination="vrJ-Dd-ztU" id="g65-mC-HIZ"/>
+                <outlet property="episodePlayPauseButton" destination="YP9-1b-Jcm" id="miy-9g-3GZ"/>
                 <outlet property="episodeTitleLabel" destination="kRf-lX-lzD" id="CzQ-7g-1Cd"/>
             </connections>
             <point key="canvasLocation" x="-1475.5" y="-527.5"/>

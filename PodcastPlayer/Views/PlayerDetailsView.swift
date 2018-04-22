@@ -14,6 +14,8 @@ class PlayerDetailsView: UIView {
     var episode: Episode! {
         didSet {
             episodeTitleLabel.text = episode.title
+            episodeAuthorLabel.text = episode.author
+            
             guard let url = URL(string: episode.imageUrl ?? "") else { return }
             episodeImageView.sd_setImage(with: url)
         }
@@ -25,5 +27,7 @@ class PlayerDetailsView: UIView {
     
     @IBOutlet weak var episodeImageView: UIImageView!
     @IBOutlet weak var episodeTitleLabel: UILabel! 
+    @IBOutlet weak var episodeAuthorLabel: UILabel!
+    @IBOutlet weak var episodePlayPauseButton: UIButton!
     
 }
