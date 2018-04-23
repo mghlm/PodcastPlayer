@@ -30,6 +30,10 @@ class PlayerDetailsView: UIView {
         }
     }
     
+    // MARK: - Constants
+    
+    fileprivate let shrunkenTransform = CGAffineTransform(scaleX: CGFloat(0.7), y: CGFloat(0.7))
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,8 +48,7 @@ class PlayerDetailsView: UIView {
     
     @IBOutlet weak var episodeImageView: UIImageView! {
         didSet {
-            let scale = CGFloat(0.7)
-            episodeImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            episodeImageView.transform = shrunkenTransform
             episodeImageView.layer.cornerRadius = 8.0
             episodeImageView.clipsToBounds = true
         }
@@ -85,8 +88,7 @@ class PlayerDetailsView: UIView {
     
     fileprivate func shrinkImageView() {
         UIView.animate(withDuration: 0.75, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            let scale = CGFloat(0.7)
-            self.episodeImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            self.episodeImageView.transform = self.shrunkenTransform
         })
     }
     
