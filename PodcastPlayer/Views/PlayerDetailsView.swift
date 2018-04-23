@@ -12,6 +12,12 @@ import SDWebImage
 
 class PlayerDetailsView: UIView {
     
+    let player: AVPlayer = {
+        let avPlayer = AVPlayer()
+        avPlayer.automaticallyWaitsToMinimizeStalling = false
+        return avPlayer
+    }()
+    
     var episode: Episode! {
         didSet {
             episodeTitleLabel.text = episode.title
@@ -24,20 +30,28 @@ class PlayerDetailsView: UIView {
         }
     }
     
-    fileprivate func playEpisode() {
-        print("Trying to play episode at url:", episode.streamUrl)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        guard let url = URL(string: episode.streamUrl) else { return }
-        let playerItem = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: playerItem)
-        player.play()
+        let time = CMTimeMake(1, 3)
+        let times = [NSValue(time: time)]
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            self.enlargeImageView()
+        }
     }
     
-    let player: AVPlayer = {
-        let avPlayer = AVPlayer()
-        avPlayer.automaticallyWaitsToMinimizeStalling = false
-        return avPlayer
-    }()
+    // MARK: - Outlets
+    
+    @IBOutlet weak var episodeImageView: UIImageView! {
+        didSet {
+            let scale = CGFloat(0.7)
+            episodeImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            episodeImageView.layer.cornerRadius = 8.0
+            episodeImageView.clipsToBounds = true
+        }
+    }
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeAuthorLabel: UILabel!
     
     // MARK: - Actions
     
@@ -51,24 +65,44 @@ class PlayerDetailsView: UIView {
         }
     }
     
+    // MARK: - Private methods
+    
+    
+    fileprivate func playEpisode() {
+        print("Trying to play episode at url:", episode.streamUrl)
+        
+        guard let url = URL(string: episode.streamUrl) else { return }
+        let playerItem = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: playerItem)
+        player.play()
+    }
+    
+    fileprivate func enlargeImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.episodeImageView.transform = .identity
+        })
+    }
+    
+    fileprivate func shrinkImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            let scale = CGFloat(0.7)
+            self.episodeImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        })
+    }
     
     @objc fileprivate func handlePlayPause() {
         
         if player.timeControlStatus == .paused {
             player.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            enlargeImageView()
         } else {
             player.pause()
             playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            shrinkImageView()
         }
         
         print("handling play/pause")
     }
-    
-    // MARK: - Outlets
-    
-    @IBOutlet weak var episodeImageView: UIImageView!
-    @IBOutlet weak var episodeTitleLabel: UILabel! 
-    @IBOutlet weak var episodeAuthorLabel: UILabel!
     
 }
