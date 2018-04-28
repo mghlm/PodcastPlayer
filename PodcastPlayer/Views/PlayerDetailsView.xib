@@ -48,16 +48,16 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXB-Xh-ijX">
                             <rect key="frame" x="0.0" y="422" width="327" height="22"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlg-7a-2Em">
-                                    <rect key="frame" x="0.0" y="0.0" width="56.5" height="22"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlg-7a-2Em">
+                                    <rect key="frame" x="0.0" y="0.0" width="39" height="22"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="88:88:88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2L-HO-qII">
-                                    <rect key="frame" x="56.5" y="0.0" width="270.5" height="22"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2L-HO-qII">
+                                    <rect key="frame" x="39" y="0.0" width="288" height="22"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -163,6 +163,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="T0B-yF-YRx"/>
             <connections>
+                <outlet property="currentTimeLabel" destination="hlg-7a-2Em" id="F5g-yT-XoE"/>
+                <outlet property="currentTimeSlider" destination="k1e-Ih-oO4" id="JmG-PY-QDy"/>
+                <outlet property="durationLabel" destination="Q2L-HO-qII" id="Lee-em-W7H"/>
                 <outlet property="episodeAuthorLabel" destination="7dz-ha-pAF" id="Vx0-Mh-GwL"/>
                 <outlet property="episodeImageView" destination="vrJ-Dd-ztU" id="g65-mC-HIZ"/>
                 <outlet property="episodeTitleLabel" destination="kRf-lX-lzD" id="CzQ-7g-1Cd"/>
