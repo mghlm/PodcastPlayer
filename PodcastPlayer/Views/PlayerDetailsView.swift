@@ -12,6 +12,8 @@ import SDWebImage
 
 class PlayerDetailsView: UIView {
     
+    // MARK: - Public properties
+    
     let player: AVPlayer = {
         let avPlayer = AVPlayer()
         avPlayer.automaticallyWaitsToMinimizeStalling = false
@@ -34,8 +36,18 @@ class PlayerDetailsView: UIView {
     
     fileprivate let shrunkenTransform = CGAffineTransform(scaleX: CGFloat(0.7), y: CGFloat(0.7))
     
+    // MARK: - UIView
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let interval = CMTimeMake(1, 2)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
+            
+            let totalSeconds = CMTimeGetSeconds(time)
+            print("Total seconds: \(totalSeconds)")
+            
+        }
         
         let time = CMTimeMake(1, 3)
         let times = [NSValue(time: time)]
@@ -69,7 +81,6 @@ class PlayerDetailsView: UIView {
     }
     
     // MARK: - Private methods
-    
     
     fileprivate func playEpisode() {
         print("Trying to play episode at url:", episode.streamUrl)
