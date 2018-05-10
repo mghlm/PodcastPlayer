@@ -78,7 +78,22 @@ class PlayerDetailsView: UIView {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var currentTimeSlider: UISlider!
     @IBOutlet weak var durationLabel: UILabel!
+    
     // MARK: - Actions
+    
+    @IBAction func handleCurrentTimeSliderChange(_ sender: Any) {
+        print("slider value:", currentTimeSlider.value)
+    }
+    
+    @IBAction func handleFastForward(_ sender: Any) {
+    }
+    
+    @IBAction func handleRewind(_ sender: Any) {
+    }
+    
+    @IBAction func handleVolumeChange(_ sender: Any) {
+    }
+    
     
     @IBAction func dismissButton(_ sender: Any) {
         self.removeFromSuperview()
