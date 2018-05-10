@@ -42,13 +42,10 @@ class PlayerDetailsView: UIView {
         let interval = CMTimeMake(1, 2)
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
             
-            let totalSeconds = Int(CMTimeGetSeconds(time))
-            print("Total seconds: \(totalSeconds)")
+            self.currentTimeLabel.text = time.toDisplayString()
             
-            let seconds = totalSeconds % 60
-            let minutes = totalSeconds / 60
-            let timeFormatString = String(format: "%02d:%02d", minutes, seconds)
-            self.currentTimeLabel.text = timeFormatString
+            let durationTime = self.player.currentItem?.duration
+            self.durationLabel.text = durationTime?.toDisplayString()
             
         }
     }
