@@ -82,7 +82,18 @@ class PlayerDetailsView: UIView {
     // MARK: - Actions
     
     @IBAction func handleCurrentTimeSliderChange(_ sender: Any) {
-        print("slider value:", currentTimeSlider.value)
+        
+        let percentage = currentTimeSlider.value
+        
+        guard let duration = player.currentItem?.duration else { return }
+        
+        let durationInSeconds = CMTimeGetSeconds(duration)
+        
+        let seekTimeInSeconds = durationInSeconds * Float64(percentage)
+        
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, Int32(NSEC_PER_SEC))
+        
+        player.seek(to: seekTime)
     }
     
     @IBAction func handleFastForward(_ sender: Any) {
