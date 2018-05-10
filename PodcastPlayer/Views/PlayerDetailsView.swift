@@ -47,6 +47,8 @@ class PlayerDetailsView: UIView {
             let durationTime = self.player.currentItem?.duration
             self.durationLabel.text = durationTime?.toDisplayString()
             
+            self.updateCurrentTimer()
+            
         }
     }
     
@@ -89,6 +91,14 @@ class PlayerDetailsView: UIView {
     }
     
     // MARK: - Private methods
+    
+    fileprivate func updateCurrentTimer() {
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(1, 1))
+        let percentage = currentTimeSeconds / durationSeconds
+        
+        self.currentTimeSlider.value = Float(percentage)
+    }
     
     fileprivate func playEpisode() {
         print("Trying to play episode at url:", episode.streamUrl)
